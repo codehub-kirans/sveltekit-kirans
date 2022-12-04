@@ -10,7 +10,7 @@
 	<ul>
 		{#each navItems as page}
 		<NavItem href={page.route}>
-			{page.title}
+			<div style="color: white">{page.title}</div>
 		</NavItem>
 		{/each}
 	</ul>

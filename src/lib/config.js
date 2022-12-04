@@ -5,7 +5,7 @@
  * PLEASE BE SURE TO UPDATE THEM ALL! Thank you!
  **/ 
 
-export const siteTitle = 'Kiran S - Group Software Engineering Manager'
+export const siteTitle = 'Kiran S'
 export const siteDescription = 'Home Page of Kiran S, Group Software Engineering Manager'
 export const siteURL = 'https://www.kirans.in'
 export const siteLink = 'https://in.linkedin.com/in/kiran-s'
