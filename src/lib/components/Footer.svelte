@@ -17,5 +17,8 @@
 		</ul>
 	</nav>
 
-	<p>&copy; {new Date().getFullYear()} {siteAuthor}. All rights reserved.</p>
+	<p>
+		&copy; {new Date().getFullYear()} {siteAuthor}. All rights reserved. <br>
+		<small><i><a href="https://in.linkedin.com/in/kiran-s">LinkedIn</a></i></small>
+	</p>
 </footer>

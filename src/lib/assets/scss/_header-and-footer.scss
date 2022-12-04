@@ -40,6 +40,8 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position:fixed;
+	width:100%;
 
 	@media (min-width: vars.$smMin) {
 		justify-content: center;
