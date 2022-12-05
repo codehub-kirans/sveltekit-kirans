@@ -5,7 +5,11 @@
 
 # About
 
-I am a **Group Software Engineering Manager**	 at Nokia leading two squad groups - one for the development of Nokia OS, a carrier grade Linux Operating System for 3G, 4G and 5G Network Platforms and the other for the DevOps CI/CD organization for Edge Clould Products. I have more than 16 years of technical, developmental and management experience.
+|![Kiran S](/static/images/Kiran-S-profile-pic.jpg "Kiran S")|
+|:--:| 
+| *Kiran S* |
+
+I am a **Group Software Engineering Manager** at Nokia leading two squad groups - one for the development of Nokia OS, a carrier grade Linux Operating System for 3G, 4G and 5G Network Platforms and the other for the DevOps CI/CD organization for Edge Clould Products. I have more than 16 years of technical, developmental and management experience.
 
 - More than 16 Years of leading engineering teams and hands-on professional software development experience in Agile product development
 - Responsible for leading Nokia OS development from scratch based on the latest kernel as well as lead the Business DevOps CI/CD Loop Infrastructure Frameworks within a global multi-site environment.
