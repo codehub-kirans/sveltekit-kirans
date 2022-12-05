@@ -5,7 +5,7 @@
 
 # About
 
-|![Kiran S](/static/images/Kiran-S-profile-pic.jpg "Kiran S")|
+|![Kiran S](/images/Kiran-S-profile-pic.jpg "Kiran S")|
 |:--:| 
 | *Kiran S* |
 
