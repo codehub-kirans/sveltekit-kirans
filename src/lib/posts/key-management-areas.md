@@ -4,17 +4,18 @@ date: "2022-12-01"
 updated: "2021-12-02"
 categories: 
   - "management"
+  - productivity"
 coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
 coverWidth: 16
 coverHeight: 9
-excerpt: Check out how heading links work with this starter in this post.
+excerpt: What are the key activities of a manager? Lets find out!
 ---
 
 <script>
 	import Callout from '$lib/components/Callout.svelte';
 </script>
 
-Unlike a programmer who can look back at the code written at the end of the day, point at it, and say “I did that.", it is often hard to find this satisfaction as a manager. Regardless of having an impeccable organization style, various forces act against your personal feeling of happy productivity.  ***Andy Grove***, who was one of the founders and long-term CEO of Intel, had an easy answer or tackling this problem - it was to classify the managerial activities that you partake in daily into four key areas:
+Unlike a programmer who can look back at the code written at the end of the day, point at it, and say “I did that!", it is often hard to find this satisfaction as a manager. Regardless of having an impeccable organization style, various forces act against your personal feeling of happy productivity.  ***Andy Grove***, who was one of the founders and long-term CEO of Intel, had an easy answer for tackling this problem - it was to classify the managerial activities that you partake in daily into four key areas:
 
 - Information gathering
 - Decision-making
