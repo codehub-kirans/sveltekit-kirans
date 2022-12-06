@@ -4,7 +4,7 @@ date: "2022-12-01"
 updated: "2021-12-02"
 categories: 
   - "management"
-  - productivity"
+  - "productivity"
 coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
 coverWidth: 16
 coverHeight: 9
