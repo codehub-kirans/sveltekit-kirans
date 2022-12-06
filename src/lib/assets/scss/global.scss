@@ -26,3 +26,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+
+th, td {
+	border-bottom: 1px solid var;
+	padding: 15px;
+
+}
+
+table td + td { border-left:2px solid var(--accent); }
+tr:hover {background-color: var(--lightAccent);}
+

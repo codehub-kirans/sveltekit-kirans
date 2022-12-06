@@ -6,7 +6,6 @@
 	font-family: var(--accentFont);
 	font-weight: bold;
 	color: var(--darker);
-	padding-top: 1.5rem;
 }
 
 h1 {
@@ -14,6 +13,7 @@ h1 {
 	margin: 0 0 3rem;
 	position: relative;
 	overflow: hidden;
+	padding-top: 1.5rem;
 	padding-bottom: 1rem;
 
 	&::after {
