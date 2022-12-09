@@ -12,9 +12,7 @@
 
 Happy to chat! You can <a rel="external" href="https://in.linkedin.com/in/kiran-s">get in touch with Kiran here</a>.
 
-<Callout>This form does nothing! Placeholder for default styling.</Callout>
-
-<form on:submit|preventDefault>
+<!--form on:submit|preventDefault>
 	<div class="form-section">
 		<label for="name">Name</label>
 		<input type="text" id="name" placeholder="First name" />
@@ -50,4 +48,4 @@ Happy to chat! You can <a rel="external" href="https://in.linkedin.com/in/kiran-
 	</div>
 
 	<input type="submit" value="Do nothing!">
-</form>
+</form-->
