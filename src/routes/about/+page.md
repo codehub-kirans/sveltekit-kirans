@@ -23,5 +23,3 @@ I am a **Group Software Engineering Manager** at Nokia leading two squad groups 
 - Experience and understanding of the product development lifecycle and processes
 - 6 years of Agile experience as a Scrum Master and integral member of a self-directed agile development team varying in size from 5 to 10 employing a scrum-based methodology
 - Over 8 years of object oriented (C++ on Linux) large scale distributed software development expertise
-
-Back to [home link](/).
