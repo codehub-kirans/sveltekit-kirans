@@ -35,8 +35,8 @@ footer {
 header {	
 	//background: var(--lightAccent);
 	//color: var(--darker);
-	background: var(--grey);	
-	color: var(--white);
+	background: var(--headerBackground);	
+	color: var(--headerText);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -170,14 +170,14 @@ header {
 }
 
 footer {
-	background: var(--darker);
-	color: var(--paper);
+	//background: var(--darker);
+	//color: var(--paper);
+	background: var(--footerBackground);
+	color: var(--footerText);
 	display: grid;
 	grid-template-columns: 100%;
 	align-items: stretch;
 	gap: 2rem;
-	background: #f5f5f7;
-	color: gray;
 
 	@media (min-width: vars.$smMin) {
 		grid-template-columns: 1fr 1fr 2fr;

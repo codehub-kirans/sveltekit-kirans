@@ -16,33 +16,40 @@ $xxxlMin: 122.5rem;
 :root {
 	// Colors
 	--accent: #E63946;
-	--background: #FAF9F8;
+	//--background: #FAF9F8;
+	--background: white;
 	--lightAccent: #A8DAE5;
 	--lighterAccent: #E6E8E4;
 	--dark: #457B9D;
 	--darker: #1D3557;
 	--slate: #2F3948;
 	--burger: gray;
+	--headerBackground: #313131;
+	--headerText: white;
+	--footerText: #515151;
+	--footerBackground: #f5f5f7;
 
 	--white: #fff;
 	--black: #152030;
-	--grey: #313131;
 
 	--ink: var(--slate);
-	--paper: var(--background);
-	
+	--paper: var(--background);	
 
 	// Fonts
 	/**
-	 * These are broken out into two separate variables from a previous iteration. I left
-	 * it in because it's nice to be able to split out the heading and body fonts.
+	 * These are broken out into two separate variables from a previous iteration.
+	 * It's nice to be able to split out the heading and body fonts.
 	 */
 	--accentFont: 'Libre Franklin', Georgia, Times, serif; 
-	--primaryFont: 'Libre Franklin', sans-serif;
+	//--primaryFont: 'Libre Franklin', sans-serif;
+	--primaryFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", 
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--codeFont: 'Fira Code', monospace;
 
 	// Base styles
 	font-size: 1rem;
+	//font-weight: 400;
 	line-height: 1.6;
 }
 
