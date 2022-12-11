@@ -13,7 +13,9 @@
 </figure>
 </div>
 
+
 <style>
+
 figure img {
     vertical-align: top;
 }
@@ -23,12 +25,11 @@ figure figcaption {
 }
 
 .center {
-  background-image: var(--src);
   background-size: contains;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width:75%;
+  width: var(--scaling);
 }
 
 </style>
