@@ -1,7 +1,7 @@
 <script>
 	import { isMenuOpen } from '$lib/assets/js/store'
-	import HamburgerSVG from './svg/HamburgerOpenSVG.svelte'
-	import XSVG from './svg/HamburgerCloseSVG.svelte'
+	import HamburgerOpenSVG from './svg/HamburgerOpenSVG.svelte'
+	import HamburgerCloseSVG from './svg/HamburgerCloseSVG.svelte'
 
 	export let closeOnly = false
 
@@ -18,8 +18,8 @@
 >
 	<span class="sr-only">Toggle hamburger menu</span>
 	{#if closeOnly}
-		<XSVG />
+		<HamburgerCloseSVG />
 	{:else}
-		<HamburgerSVG />
+		<HamburgerOpenSVG />
 	{/if}
 </button>
