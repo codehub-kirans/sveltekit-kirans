@@ -11,7 +11,7 @@
 <ImageInsert src="/images/Kiran-S-profile-pic.jpg" alt="Kiran S" caption="Kiran S" width="234" height="218" --scaling="75%">
 </ImageInsert>
 
-I am a **Squad Group Software Engineering Manager** at Nokia leading two squad groups - one for the development of Nokia OS, a carrier grade Linux Operating System and one for the DevOps CI/CD organization for 3G, 4G and 5G Platform and Edge Cloud Products. My background includes: 
+Hi, I'm Kiran! I am a **Squad Group Software Engineering Manager** at Nokia leading two squad groups - one for the development of Nokia OS, a carrier grade Linux Operating System and one for the DevOps CI/CD organization for 3G, 4G and 5G Platform and Edge Cloud Products. My background at Nokia includes: 
 
 - More than 16 Years of leading engineering teams with hands-on professional software development experience in Agile product development
 - Responsible for Nokia OS development from scratch for platform and edge cloud products as well as leading the DevOps CI/CD Loop Infrastructure Frameworks within a global multi-site environment
