@@ -1,7 +1,4 @@
 import { error } from '@sveltejs/kit'
-import { inject } from '@vercel/analytics'
-
-inject();
 
 export const load = async () => {
 	try {
