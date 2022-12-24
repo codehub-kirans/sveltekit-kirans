@@ -30,6 +30,13 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+	},
+	
+	csp: {
+		directives: {
+			defaultSrc: ["'self'"],
+			styleSrc: ["'self'", 'fonts.googleapis.com']
+		}
 	}
 };
 
