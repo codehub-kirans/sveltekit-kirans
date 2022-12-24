@@ -33,6 +33,7 @@ const config = {
 	},
 	
 	csp: {
+		mode: 'enforce',
 		directives: {
 			defaultSrc: ["'self'"],
 			styleSrc: ["'self'", 'fonts.googleapis.com'],
