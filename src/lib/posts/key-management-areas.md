@@ -15,7 +15,7 @@ excerpt: What are the key activities of a manager? Lets find out!
 	import Callout from '$lib/components/Callout.svelte';
 </script>
 
-Unlike a programmer who can look back at the code written at the end of the day, point at it, and say “I did that!", it is often hard to find this satisfaction as a manager. Regardless of having an impeccable organization style, various forces act against your personal feeling of happy productivity.  ***Andy Grove***, who was one of the founders and long-term CEO of Intel, had an easy answer for tackling this problem - it was to classify the managerial activities that you partake in daily into four key areas:
+Unlike a programmer who can look back at the code written at the end of the day, point at it, and say “I did that!", it is often hard to find this satisfaction as a manager. Regardless of having a flawless organization style, various forces act against your personal feeling of happy productivity.  ***Andy Grove***, who was one of the founders and long-term CEO of Intel, had an easy answer for tackling this problem - it was to classify the managerial activities that you partake in daily into four key areas:
 
 - Information gathering
 - Decision-making
@@ -31,11 +31,11 @@ Keep adding information to your knowledge base. Seek it out, ask questions, and 
 
 ## Decision-Making
 
-You can make decisions of all sizes. These range from small, such as granting a holiday request, to large, such as deciding whether to migrate your application infrastructure into the cloud or keep it within your own data center. The ability to decide is a privilege that not everybody has. It’s easy to forget that there are many people who don’t have the power to decide particular outcomes, so always give decisions your full attention and take responsibility for the ramifications of making them. Every decision is an inflection point: should we hire Bob or Susan? Should we split the team into two sub-teams? Should we refuse to begin estimating the work required for this project when the proposal for the product is so unclear? Decisions such as these may seem like they’re small in that moment, but extrapolated over time and bringing in the cost of the different outcomes, they are big decisions, so treat them with respect.
+You can make decisions of all sizes. These range from small, such as granting a holiday request, to large, such as deciding whether to migrate your application infrastructure into the cloud or keep it within your own data center. The ability to decide is a privilege that not everybody has. It’s easy to forget that there are many people who don’t have the power to decide particular outcomes, so always give decisions your full attention and take responsibility for the ramifications of making them. Every decision is an inflection point: should we hire Bob or Alice? Should we split the team into two sub-teams? Should we refuse to begin estimating the work required for this project when the proposal for the product is so unclear? Decisions such as these may seem like they’re small in that moment, but extrapolated over time and bringing in the cost of the different outcomes, they are big decisions, so treat them with respect.
 
 ## Nudging
 
-The concept of nudging is influencing a decision by contributing your own viewpoint to the discussion. For example, you may be involved in a discussion about whether to build or buy some particular software, and you make it clear how you feel about the situation. You are not the decision-maker, but you can influence the decision. Like decision-making, nudging can occur for decisions of all sizes. You may put your viewpoint across about whether to book a meeting immediately or tomorrow, or equally state your case in a dis- cussion as to whether to open an office in the United Kingdom or abroad.
+The concept of nudging is influencing a decision by contributing your own viewpoint to the discussion. For example, you may be involved in a discussion about whether to build or buy some particular software, and you make it clear how you feel about the situation. You are not the decision-maker, but you can influence the decision. Like decision-making, nudging can occur for decisions of all sizes. You may put your viewpoint across about whether to book a meeting immediately or tomorrow, or equally state your case in a discussion as to whether to bring in an external consulting agency or not.
 
 ## Being a Role Model
 

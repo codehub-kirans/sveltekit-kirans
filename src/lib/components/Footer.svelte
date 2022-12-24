@@ -11,13 +11,13 @@
 
 	<nav>
 		<div>
-			<a href="https://in.linkedin.com/in/kiran-s">
+			<a href="https://in.linkedin.com/in/kiran-s" alt="Kiran S @LinkedIn">
 				<LinkedinSvg />
 			</a>
-			<a href="https://github.com/codehub-kirans">
+			<a href="https://github.com/codehub-kirans" alt="Kiran S @Github">
 				<GithubSvg />
 			</a>
-			<a href="/api/rss.xml" data-sveltekit-reload>
+			<a href="/api/rss.xml" alt="RSS Feed" data-sveltekit-reload>
 				<RssSvg />
 			</a>
 		</div>
