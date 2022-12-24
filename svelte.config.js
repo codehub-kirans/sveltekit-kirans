@@ -35,7 +35,10 @@ const config = {
 	csp: {
 		directives: {
 			defaultSrc: ["'self'"],
-			styleSrc: ["'self'", 'fonts.googleapis.com']
+			styleSrc: ["'self'", 'fonts.googleapis.com'],
+			scriptSrc: ["'self'"],
+			objectSrc: ["'none'"],
+			baseUri: ["'none'"]
 		}
 	}
 };
