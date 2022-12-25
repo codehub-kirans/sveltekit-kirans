@@ -183,7 +183,7 @@
         class="strength-indicator__bar"
         class:strength-indicator__bar--weak={strengthResult.score === 0}
         class:strength-indicator__bar--fair={strengthResult.score === 1}
-        class:strength-indicator__bar--strong={strengthResult.score === 2}
+        class:strength-indicator__bar--strong={strengthResult.score >= 2}
         style={{width: `${(strengthResult.score / 4) * 100}%`}}
       ></div>
       <div class="strength-indicator__text">
@@ -193,7 +193,7 @@
         {#if strengthResult.score === 1}
           Fair
         {/if}
-        {#if strengthResult.score === 2}
+        {#if strengthResult.score >= 2}
           Strong
         {/if}
       </div>
