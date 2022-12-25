@@ -9,6 +9,8 @@
     let includeNumbers = true;
     let includeSpecialCharacters = true;
     let strengthResult;
+
+    let selectedOptions = ["alphabets", "numbers", "specialCharacters"];
   
     function generatePassword() {
       let options = {
@@ -20,17 +22,17 @@
         includeSpecialCharacters
       };
   
-      password = generateRandomPassword(options);
+      password = generateCharacterSet(options);
       strengthResult = zxcvbn(password);
     }
   
-    function generateRandomPassword(options) {
+    function generateCharacterSet(options) {
       let length = options.length || 8;
-      let specialCharacters = options.specialCharacters || false;
-      let caseSensitive = options.caseSensitive || false;
-      let includeAlphabets = options.includeAlphabets || true;
-      let includeNumbers = options.includeNumbers || false;
-      let includeSpecialCharacters =  specialCharacters;
+      let specialCharacters = selectedOptions.includes('specialCharacters') || false;
+      let caseSensitive = selectedOptions.includes('caseSensitive') || false;
+      let includeAlphabets = selectedOptions.includes('alphabets') || false;
+      let includeNumbers = selectedOptions.includes('numbers') || false
+      let includeSpecialCharacters = selectedOptions.includes('specialCharacters') || false;
   
       let password = '';
       let characters = '';
@@ -122,14 +124,25 @@
 <h1>Password Generator</h1>
 
 <div class="form-control">
-<label class="form-control__label" for="length">Length:</label>
-<input
+    <label class="form-control__label" for="length">Length:</label>
+    <input
+        class="form-control__input"
+        type="number"
+        id="length"
+        bind:value={length}
+        on:input={event => length = +event.target.value}
+        min="1"
+        max="100"
+    />
+    <input
     class="form-control__input"
-    type="number"
+    type="range"
     id="length"
     bind:value={length}
     on:input={event => length = +event.target.value}
-/>
+    min="1"
+    max="100"
+    />
 </div>
 
 <div class="form-control">
@@ -143,15 +156,15 @@
 <div class="form-control">
     <label class="form-control__label" for="characters">Characters:</label>
     <label class="form-control__checkbox">
-        <input type="checkbox" id="characters" bind:checked={includeAlphabets} />
+        <input type="checkbox" id="characters" bind:group={selectedOptions} value="alphabets" />
         <span class="form-control__checkbox-label">Include alphabets</span>
     </label>
     <label class="form-control__checkbox">
-        <input type="checkbox" bind:checked={includeNumbers} />
+        <input type="checkbox" bind:group={selectedOptions} value="numbers" />
         <span class="form-control__checkbox-label">Include numbers</span>
     </label>
     <label class="form-control__checkbox">
-        <input type="checkbox" bind:checked={specialCharacters} />
+        <input type="checkbox" bind:group={selectedOptions} value="specialCharacters" />
         <span class="form-control__checkbox-label">Include special characters</span>
     </label>
 </div>
@@ -164,6 +177,7 @@
       <label class="form-control__label" for="password">Password:</label>
       <input class="form-control__input" type="text" id="password" value={password} readonly />
     </div>
+
     <div class="strength-indicator">
       <div
         class="strength-indicator__bar"
@@ -185,6 +199,10 @@
       </div>
     </div>
   </div>
+{/if}
+
+{#if selectedOptions.length === 0 }
+  <p>Please select atleast one character set</p>
 {/if}
 
 
