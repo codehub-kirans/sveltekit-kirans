@@ -14,6 +14,9 @@ export const siteAuthor = 'Kiran S'
 // Controls how many posts are shown per page on the main blog index pages
 export const postsPerPage = 10
 
+// Controls how many tools are shown per page on the main blog index pages
+export const toolsPerPage = 10
+
 // Controls the main nav menu. (Also used by the footer and mobile nav.)
 export const navItems = [
 	{
@@ -26,6 +29,9 @@ export const navItems = [
 		title: 'Blog',
 		route: '/blog'
 
+	}, {
+		title: 'Tools',
+		route: '/tools' 
 	}, {
 		title: 'Contact',
 		route: '/contact' 

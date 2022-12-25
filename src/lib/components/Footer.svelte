@@ -14,7 +14,7 @@
 			<a href="https://in.linkedin.com/in/kiran-s" aria-label="Link to Kiran's Linked Page" alt="Kiran S @LinkedIn">
 				<LinkedinSvg />
 			</a>
-			<a href="https://github.com/codehub-kirans" aria-label="Link to Kiran's Github Page"alt="Kiran S @Github">
+			<a href="https://github.com/codehub-kirans" aria-label="Link to Kiran's Github Page" alt="Kiran S @Github">
 				<GithubSvg />
 			</a>
 			<a href="/api/rss.xml" alt="RSS Feed" aria-label="Link to RSS Feed" data-sveltekit-reload>
