@@ -28,8 +28,9 @@
   
     function generateCharacterSet(options) {
       let length = options.length || 8;
-      let specialCharacters = selectedOptions.includes('specialCharacters') || false;
-      let caseSensitive = selectedOptions.includes('caseSensitive') || false;
+      
+      let caseSensitive = options.caseSensitive || false;
+
       let includeAlphabets = selectedOptions.includes('alphabets') || false;
       let includeNumbers = selectedOptions.includes('numbers') || false
       let includeSpecialCharacters = selectedOptions.includes('specialCharacters') || false;
@@ -153,7 +154,7 @@
     <label class="form-control__label" for="case-sensitive">Case sensitivity:</label>
     <label class="form-control__checkbox">
         <input type="checkbox" id="case-sensitive" bind:checked={caseSensitive} />
-        <span class="form-control__checkbox-label">Make password case sensitive</span>
+        <span class="form-control__checkbox-label">Include both uppercase and lowercase alphabets</span>
     </label>
 </div>
 
