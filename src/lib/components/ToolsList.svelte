@@ -8,9 +8,9 @@
 		<li>
 			<article>
 				<a href="/tools/{tool.slug}">
-					<h2>
+					<h3>
 						{tool.slug}
-					</h2>
+					</h3>
 				</a>
 			</article>
 		</li>

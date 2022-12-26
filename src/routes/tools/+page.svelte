@@ -1,6 +1,6 @@
 <script>
 	import ToolsList from '$lib/components/ToolsList.svelte'
-	import Pagination from '$lib/components/Pagination.svelte'
+	import ToolsListPagination from '$lib/components/ToolsListPagination.svelte'
 
 	export let data	
 </script>
@@ -15,7 +15,7 @@
 
 <ToolsList tools={data.tools} />
 
-<Pagination currentPage={1} totalTools ={data.total} />
+<ToolsListPagination currentPage={1} totalTools ={data.total} />
 
 
 
