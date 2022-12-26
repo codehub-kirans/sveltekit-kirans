@@ -59,6 +59,10 @@
 
       return password;
     }
+
+    function copyToClipboard() {
+      navigator.clipboard.writeText(password);
+    }
 </script>
   
 <style>
@@ -176,6 +180,7 @@
     <div class="form-control">
       <label class="form-control__label" for="password">Password:</label>
       <input class="form-control__input" type="text" id="password" value={password} readonly />
+      <button on:click={copyToClipboard}>Copy to clipboard</button>
     </div>
 
     <div class="strength-indicator">
@@ -204,5 +209,3 @@
 {#if selectedOptions.length === 0 }
   <p>Please select atleast one character set</p>
 {/if}
-
-
