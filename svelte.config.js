@@ -31,8 +31,8 @@ const config = {
 	kit: {
 		adapter: adapter(),
 	},
-	
-	csp: {
+		
+	/*csp: {
 		mode: 'enforce',
 		directives: {
 			defaultSrc: ["'self'"],
@@ -41,7 +41,7 @@ const config = {
 			objectSrc: ["'none'"],
 			baseUri: ["'none'"]
 		}
-	}
+	}*/
 };
 
 export default config;
