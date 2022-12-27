@@ -80,7 +80,7 @@
 </script>
 
 <h1>PDF to Text Converter</h1>
-<input id="pdffile" name="pdffile" type="file" />
+<input id="pdffile" name="pdffile" type="file" accept="application/pdf"/>
 <button id="btn" on:click={convert}>Process</button>
 
 {#if extractedText}
