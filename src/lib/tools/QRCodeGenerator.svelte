@@ -1,6 +1,6 @@
 <script>
     import QRCode from 'qrcode';
-    import ImageInsert from '$lib/components/ImageInsert.svelte';
+    import ImageLoader from '$lib/components/ImageLoader.svelte';
   
     let qrCodeUrl;
     let qrText = '';
@@ -19,7 +19,7 @@
 
 {#if qrCodeUrl}
   <!--img src={qrCodeUrl} alt="QR code" /-->
-  <ImageInsert 
+  <ImageLoader 
     src={qrCodeUrl} 
     caption="QRCode for {qrText}" 
     alt="QRCode for {qrText}" aria-label="Generated QRCode" 
