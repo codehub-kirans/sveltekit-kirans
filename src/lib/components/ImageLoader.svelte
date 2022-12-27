@@ -4,34 +4,21 @@
     export let src;
     export let alt = "";
     export let caption = "";
-
-    import { onMount } from 'svelte'
-    import IntersectionObserver from './IntersectionObserver.svelte'
-    import Image from './Image.svelte'
-    let nativeLoading = false
-
-    // Determine whether to bypass our intersecting check
-    onMount(() => {
-       if ('loading' in HTMLImageElement.prototype) {
-         nativeLoading = true
-       }
-     })
-  
 </script>
 
 <div class="center">
-    <IntersectionObserver once={true} let:intersecting={intersecting}>
-        {#if intersecting || nativeLoading}
-            <figure>
-                <Image src={src} alt={alt} width={width} height={height} loading="lazy" />
-                <figcaption>{caption}</figcaption>
-            </figure>
-        {/if}
-    </IntersectionObserver>
+<figure>
+    <img src={src} alt={alt} width={width} height={height} loading="lazy" />
+    <figcaption>{caption}</figcaption>
+</figure>
 </div>
 
 
 <style>
+
+figure img {
+    vertical-align: top;
+}
 
 figure figcaption {
     text-align: center;
@@ -46,4 +33,3 @@ figure figcaption {
 }
 
 </style>
-

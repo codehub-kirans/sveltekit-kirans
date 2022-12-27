@@ -1,6 +1,6 @@
 <script>
     import QRCode from 'qrcode';
-    import ImageLoader from '$lib/components/ImageLoader.svelte';
+    import LazyImageLoader from '$lib/components/LazyImageLoader.svelte';
   
     let qrCodeUrl;
     let qrText = '';
@@ -18,8 +18,7 @@
 <button on:click={() => generateQRCode(qrText)}>Generate QR Code</button>
 
 {#if qrCodeUrl}
-  <!--img src={qrCodeUrl} alt="QR code" /-->
-  <ImageLoader 
+  <LazyImageLoader 
     src={qrCodeUrl} 
     caption="QRCode for {qrText}" 
     alt="QRCode for {qrText}" aria-label="Generated QRCode" 
