@@ -23,7 +23,7 @@ Nokia may require me to not tell you about something, but it cannot require me t
 ## How can you help me?
 - ***Be accountable***. This is the expectation. Let me know if there is something preventing you from accomplishing this.
 - ***Disagree with me***. The best solutions comes from a healthy level of debate. We need to be able to separate our ideas from our egos. I’ll challenge your ideas with the goal of coming to the best possible solution, I hope you’ll challenge mine.
-- **Tell me when I screw up***. This is very important. I screw up and sometimes don’t notice. I need to know or I’ll likely do it again.
+- ***Tell me when I screw up***. This is very important. I screw up and sometimes don’t notice. I need to know or I’ll likely do it again.
 - ***Communicate***. One of my jobs is to provide context. Are you missing some? Let me know and I’ll fill you in or go find out.
 - ***Collaborate***. We work as a team to get great things done.
 
