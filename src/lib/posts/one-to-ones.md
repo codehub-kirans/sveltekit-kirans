@@ -5,7 +5,7 @@ updated: "2022-12-03"
 categories: 
   - "management"
   - "one-to-ones"
-coverImage: "/images/one-on-one.webp"
+coverImage: "/images/optimized/one-on-one.webp"
 coverWidth: 16
 coverHeight: 9
 excerpt: How do you do effective One-to-Ones with your reportees? Lets find out!

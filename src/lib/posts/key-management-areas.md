@@ -5,7 +5,7 @@ updated: "2021-12-02"
 categories: 
   - "management"
   - "productivity"
-coverImage: "/images/what-does-a-manager-do.jpg"
+coverImage: "/images/optimized/what-does-a-manager-do.webp"
 coverWidth: 16
 coverHeight: 9
 excerpt: What are the key activities of a manager? Lets find out!

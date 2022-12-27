@@ -15,7 +15,7 @@ const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight, cate
 	<meta name="twitter:title" content={title} />
 	<meta property="og:description" content={excerpt} />
 	<meta name="twitter:description" content={excerpt} />
-	<!-- <meta property="og:image" content="https://www.kirans.in/images/Kiran-S-profile-pic.jpg" /> -->
+	<!-- <meta property="og:image" content="https://www.kirans.in/images/optimized/Kiran-S-profile-pic.webp" /> -->
 	<meta property="og:image:width" content={coverWidth} />
 	<meta property="og:image:height" content={coverHeight} />
 	<!-- <meta name="twitter:image" content="https://mydomain.com/image_path" /> -->

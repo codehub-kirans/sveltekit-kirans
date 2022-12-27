@@ -5,7 +5,7 @@ updated: "2022-12-02"
 categories: 
   - "management"
   - "productivity"
-coverImage: "/images/measuring-management-output.jpg"
+coverImage: "/images/optimized/measuring-management-output.webp"
 coverWidth: 16
 coverHeight: 9
 excerpt: As a manager how do you measure your output? Lets find out!
