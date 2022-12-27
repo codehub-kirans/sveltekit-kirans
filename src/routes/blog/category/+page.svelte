@@ -1,6 +1,6 @@
 <script>
 	export let data
-  const { uniqueCategories } = data
+  	const { uniqueCategories } = data
 </script>
 
 

@@ -1,6 +1,6 @@
 <svelte:head>
 	<title>About</title>
-	<meta name="description" content="Home Page of Kiran S, Group Software Engineering Manager" />
+	<meta name="description" content="Home Page of Kiran S, Senior Group Software Engineering Manager" />
 </svelte:head>
 
 <script>

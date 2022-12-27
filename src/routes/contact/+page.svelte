@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<title>Contact</title>
+	<meta data-key="description" name="description" content="Contact Kiran S" />
 </svelte:head>
 
 

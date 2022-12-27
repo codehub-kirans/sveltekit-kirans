@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>Tools</title>
-	<meta data-key="description" name="description" content="Useful Utilities" />
+	<meta data-key="description" name="description" content="Useful Tools and Utilities" />
 </svelte:head>
 
 <h1>Tools</h1>

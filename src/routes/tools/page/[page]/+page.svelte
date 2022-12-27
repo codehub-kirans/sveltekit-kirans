@@ -2,7 +2,7 @@
 <script>
 	import ToolsList from '$lib/components/ToolsList.svelte'
 	import ToolsListPagination from '$lib/components/ToolsListPagination.svelte'
-  import { toolsPerPage, siteDescription } from '$lib/config'
+  	import { toolsPerPage } from '$lib/config'
 
 	export let data
 	const { page, totalTools, tools } = data
@@ -14,7 +14,7 @@
 
 <svelte:head>
 	<title>Tools - page {page}</title>
-	<meta data-key="description" name="description" content={siteDescription} />
+	<meta data-key="description" name="description" content="Useful Tools and Utilities" />
 </svelte:head>
 
 
