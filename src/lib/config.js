@@ -33,7 +33,7 @@ export const navItems = [
 		title: 'Tools',
 		route: '/tools' 
 	}, {
-		title: 'Wordle',
+		title: 'Wordle Game',
 		route: '/wordle' 
 	}, {
 		title: 'Contact',
