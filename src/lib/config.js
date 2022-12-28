@@ -33,7 +33,10 @@ export const navItems = [
 		title: 'Tools',
 		route: '/tools' 
 	}, {
+		title: 'Wordle',
+		route: '/wordle' 
+	}, {
 		title: 'Contact',
 		route: '/contact' 
-	},
+	}
 ]
