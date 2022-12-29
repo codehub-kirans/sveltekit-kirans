@@ -1,6 +1,7 @@
 # Kiran S
 
-This is a personal website built with svelteKit.
+This is a personal website built with HTML, CSS(SASS), Javascript and SvelteKit!
+Code is open-sourced - _so feel, free to fork and customize!_
 
 ## Uses
 
@@ -15,5 +16,5 @@ This is a personal website built with svelteKit.
 	- 🔗 **Rehype** plugins are included to generate unique heading IDs, for direct linking
 - 📱 **Responsive and accessible defaults**; includes a "skip to content" link and accessible mobile nav menu
 - 🔄 **Page transitions** (_fancy!_)
-- 🔎 **Basic SEO** for blog posts (_strongly recommend checking that out for yourself, though_)
-- 📰 **RSS feed** set up and ready to go (_though it could also likely benefit from some optimization_); just update `src/lib/config.js`
+- 🔎 **Basic SEO** for blog posts
+- 📰 **RSS feed** set up and ready to go (_though it could also likely benefit from some optimization_)
