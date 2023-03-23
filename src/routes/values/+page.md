@@ -4,6 +4,9 @@
 </svelte:head>
 
 # Values
+## Motivation
+The creation of this README is to help me identify and refine my thoughts and values as a leader. It is also to help you understand me better to help us work together.  
+It is however not meant as a replacement or instruction document to actually get to know each other. So I also invite your feedback for any glaring blind spots that may inevitably show up in my persona over time.
 ## Me, as a Leader
 | Company Perspective | My perspective |
 |---|---|
@@ -15,13 +18,14 @@ If I do something that negatively impacts my ability to retain you, or that feel
 Nokia may require me to not tell you about something, but it cannot require me to lie to you. I bias toward transparency and candor. You can ask anything, either professionally or personally. Most of the time, I'll answer. Very rarely, I won't. I'm committed to never lying to you.
 
 ## How can I help you?
-- ***Provide context.*** Most of my day is spent on information, decision making, nudging and sharing context/information. I’ll try to push information to you as much as I can but feel free to ask about anything else.
-- ***Provide an outside(ish) perspective.*** I won’t be working on your project day to day but will be close enough to have informed thoughts.
-- ***Cheer.***  “I will celebrate your successes".
-- ***Feedback.*** Please let me know how else I can help. 
+- ***Provide context***. Most of my day is spent on information, decision making, nudging and sharing context/information. I’ll try to push information to you as much as I can but feel free to ask about anything else.
+- ***Provide an outside(ish) perspective***. I won’t be working on your project day to day but will be close enough to have informed thoughts.
+- ***Cheer***.  “I will celebrate your successes".
+- ***Feedback***. Please let me know how else I can help. 
 
 ## How can you help me?
 - ***Be accountable***. This is the expectation. Let me know if there is something preventing you from accomplishing this.
+- ***Be open***. Feel free to openly reach out for any issue(s) that impedes your work, either professionally or personally. I'll try my best to help where I can if it is in my area of competence or refer you to the most competent person.
 - ***Disagree with me***. The best solutions comes from a healthy level of debate. We need to be able to separate our ideas from our egos. I’ll challenge your ideas with the goal of coming to the best possible solution, I hope you’ll challenge mine.
 - ***Tell me when I screw up***. This is very important. I screw up and sometimes don’t notice. I need to know or I’ll likely do it again.
 - ***Communicate***. One of my jobs is to provide context. Are you missing some? Let me know and I’ll fill you in or go find out.
@@ -56,6 +60,7 @@ Consider it, but acting on it is not required. Some of it will be good, and some
 	- At the end of the day, it is your career. You set your goals. You set your priorities. Let me know how I can help you achieve them.
 
 ## My Quirks
-	- I am an ambivert. I spend time alone to recharge my batteries. I can be quiet during meetings involving more than six people, but that does not mean I’m not engaged.
-	- The worst way to get me to do something is to tell me to do it without explaining the context. Even if you’ve described the context, don’t push me to commit immediately. I need time to process new information. I commit deliberately. If you want me to commit during a meeting, send me data beforehand.
-	- I'm perceptive of the Dunning-Kruger effect. Broad generalizations and stating opinions as facts are a trigger for me.
+	- I am an ambivert. I spend time alone to recharge my batteries. I can sometime be quiet during meetings involving more than ten people, but that does not mean I’m not engaged.
+	- I commit deliberately. If you want me to commit during a meeting, send me data beforehand as I need time to process new information.
+	- Don’t push me to commit immediately without context. The worst way to get me to do something is to tell me to do it without explaining the context.
+	- I'm perceptive of the Dunning-Kruger effect. I'll try to spot and highlight broad generalizations or when opinions are stated as facts to avoid poor decisions made by high achieving and confident junior members of staff or rash decisions by confident senior managers. 
