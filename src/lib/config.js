@@ -3,7 +3,7 @@
  * in the <meta> tags, in the footer, and in the RSS feed.
  * 
  * PLEASE BE SURE TO UPDATE THEM ALL!
- **/ 
+ **/
 
 export const siteTitle = 'Kiran S'
 export const siteDescription = 'Home Page of Kiran S, Group Software Engineering Manager'
@@ -24,19 +24,16 @@ export const navItems = [
 		route: '/about'
 	}, {
 		title: 'Values',
-		route: '/values' 
+		route: '/values'
 	}, {
 		title: 'Blog',
 		route: '/blog'
 
 	}, {
 		title: 'Tools',
-		route: '/tools' 
-	}, {
-		title: 'Wordle Game',
-		route: '/wordle' 
+		route: '/tools'
 	}, {
 		title: 'Contact',
-		route: '/contact' 
+		route: '/contact'
 	}
 ]
