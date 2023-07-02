@@ -12,7 +12,7 @@
 		"@neoconfetti/svelte": "latest",
 		"@sveltejs/adapter-auto": "latest",
 		"@sveltejs/adapter-static": "latest",
-		"@sveltejs/kit": "^1.16.3",
+		"@sveltejs/kit": "latest",
 		"eslint": "latest",
 		"eslint-config-prettier": "latest",
 		"eslint-plugin-svelte3": "latest",
@@ -23,7 +23,7 @@
 		"rehype-slug": "latest",
 		"sass": "latest",
 		"svelte": "latest",
-		"svelte-preprocess": "next",
+		"svelte-preprocess": "latest",
 		"vite": "latest"
 	},
 	"type": "module",
