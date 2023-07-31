@@ -28,7 +28,12 @@ export const navItems = [
 	}, {
 		title: 'Blog',
 		route: '/blog'
-
+	}, {
+		title: 'Engineering Management',
+		route: '/blog/category/management'
+	}, {
+		title: 'Engineering Artistry',
+		route: '/blog/category/engineering'
 	}, {
 		title: 'Showcase',
 		route: '/showcase'

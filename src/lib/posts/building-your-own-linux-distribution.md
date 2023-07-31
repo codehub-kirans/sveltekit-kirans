@@ -37,7 +37,7 @@ The process of building Linux from scratch consists of two main phases:
 
 The host system is the existing Linux system that we will use to build our custom Linux system. In our case, we will use Ubuntu 23.04 running inside a VM on VMware Fusion. To prepare the host system, we need to do the following:
 
-Create a VM by using VMware Fusion and run the live image of Ubuntu. On booting the live image in the VM, we will be presented with the option to either install or try the OS. Choose try and on the next page, choose Help -> Shell on the top right to enter the console. Alternatively, you can choose to install the OS inside the VM as well. But since this is a temporary system to build your linux distribution, you can just opt to run the OS inside the VM.
+Create a VM by using VMware Fusion and run the Ubuntu live image. On booting the live image in the VM, we will be presented with the option to either install or try the OS. Choose try and on the next page, choose Help -> Shell on the top right to enter the console. Alternatively, you can choose to install the OS inside the VM as well. But since this is a temporary system to build your linux distribution, you can just opt to run the OS live image inside the VM without installing it.
 
 Once you're entered the console, install the required packages for building LFS on Ubuntu. You can use the following commands to install them:
 
@@ -101,9 +101,9 @@ EOF
 bash version-check.sh
 ```
 
-If you see anything missing, use aptitude to install a remaining missing packages.
+If you see anything missing, use aptitude to install the remaining missing packages.
 
-Create a 15GB root (/) linux file system partition and a 100MB EFI boot partition You can use any partitioning tool that you prefer, such as fdisk, cfdisk, or gparted. The size of the root partition depends on how much software you want to install on your LFS system, but it should be at least 10 GB. For simplicity, we will assume that the disk is an nvme drive and the partition is /dev/nvme0n1p1 for the efi boot partition and dev/nvme0n1p2 for the root (/) partition in this post. Some (old) UEFI implementations may require the ESP to be the first partition on the disk.
+Create a 15GB root (/) linux ext4 file system partition and a 100MB EFI boot fat32 file system partition. You can use any partitioning tool that you prefer, such as fdisk, cfdisk, or gparted. The size of the root partition depends on how much software you want to install on your LFS system, but it should be at least 10 GB. For simplicity, we will assume that the disk is an NVME drive and the partition is /dev/nvme0n1p1 for the efi boot partition and dev/nvme0n1p2 for the root (/) partition in this post. Some (old) UEFI implementations may require the ESP to be the first partition on the disk.
 
 Create filesystems on the EFI and root partitions. You can use any filesystem type that you prefer, such as ext4, xfs, or btrfs for the root partition, but it should be vfat for the EFI partition. For simplicity, we will assume that the filesystem type is ext4 for the root partition in this post. You can use the following commands for the same:
 
@@ -115,13 +115,13 @@ mkfs.vfat /dev/nvme0n1p1
 mkfs.ext4 /dev/nvme0n1p2
 ```
 
-Set the **$LFS** Variable - ensure that this variable is always defined throughout the LFS build process. It should be set to the name of the directory where you will be building your LFS system - we will use /mnt/lfs
+Set the **$LFS** variable - ensure that this variable is always defined throughout the LFS build process. It should be set to the name of the directory where you will be building your LFS system - we will use /mnt/lfs.
 
 ```bash
 export LFS=/mnt/lfs
 ```
 
-Mount the root partition on a mount point. You can use any mount point that you prefer, such as /mnt/lfs or /lfs. For simplicity, we will assume that the mount point is /mnt/lfs in this post. You can use the following commands for the same:
+Mount the root partition on the **LFS** mount point. You can use the following commands for the same:
 
 ```bash
 sudo mkdir -pv $LFS
@@ -142,7 +142,7 @@ md5sum -c md5sums
 popd
 ```
 
-Create a user for building LFS. You can use any username that you prefer. For simplicity, assume that the username is lfs in this post. You can use the following commands to create the user and set up its environment:
+Create a user for building LFS. You can use any username that you prefer. Assume that the username is **lfs** in this post. You can use the following commands to create the user and set up its environment:
 
 ```bash
 sudo groupadd lfs
@@ -234,13 +234,15 @@ When compiling packages, you may encounter some errors or warnings related to AR
 
   export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
 
-When configuring the kernel, you may need to enable some options that are specific to ARM64 architectures or your target device. You can use the make menuconfig command to select the options you want, such as architecture, CPU type, drivers, filesystems, etc. You can find some useful resources for configuring the kernel on ARM64 [here](https://clfs.org/~kb0iic/lfs-systemd/index.html).
+Next we move on to configuring the kernel for boot-up preparations.
 
 ## Booting your custom linux distribution
 
 Building the linux kernel for the first time is one of the most challenging tasks in LFS. Getting it right depends on the specific hardware for the target system and your specific needs. There are almost 12,000 configuration items that are available for the kernel although only about a third of them are needed for most computers.
 
-Prepare for compilation by running the following command:
+When configuring the kernel, you may need to enable some options that are specific to ARM64 architectures or your target device. You can use the make menuconfig command to select the options you want, such as architecture, CPU type, drivers, filesystems, etc. You can find some useful resources for configuring the kernel on ARM64 [here](https://clfs.org/~kb0iic/lfs-systemd/index.html).
+
+Prepare for compilation by running the following commands:
 
 ```bash
 # This ensures that the kernel tree is absolutely clean. The kernel team recommends that this command be issued prior to each kernel compilation
@@ -355,19 +357,19 @@ mkdir -pv /boot/efi &&
 mount -v -t vfat /dev/nvme0n1p1 /boot/efi
 ```
 
-Install the arm64 EFI utilities on the host with the following command:
+Install the arm64 EFI utilities. For simplicity, install it from the host with the following command: (you can also choose to compile it natively in your LFS chroot)
 
 ```bash
 apt install grub-efi-arm64
 ```
 
-Now install grub with the following command
+Now install grub with the following command:
 
 ```bash
 grub-install --target=arm64-efi --boot-directory=/mnt/lfs/boot bootloader-id=LFS --efi-directory=/boot/efi
 ```
 
-Configure the grub file in /mnt/lfs/boot/grub.cfg
+Configure the grub file in /mnt/lfs/boot/grub.cfg:
 
 ```bash
 # Begin /boot/grub/grub.cfg
@@ -376,7 +378,6 @@ set timeout=5
 
 insmod part_gpt
 insmod ext2
-#set root=(hd0,2)
 
 if loadfont /boot/grub/fonts/unicode.pf2; then
   set gfxmode=auto
@@ -384,6 +385,7 @@ if loadfont /boot/grub/fonts/unicode.pf2; then
   terminal_output gfxterm
 fi
 
+# Make sure to replace /dev/nvme0n1p2 with the device name of your disk layout
 menuentry "Custom Linux, r11.3-169-systemd-6.4.3"  {
   linux   /boot/vmlinuz-6.4.3-lfs-11.3-systemd root=/dev/nvme0n1p2 ro
 }
