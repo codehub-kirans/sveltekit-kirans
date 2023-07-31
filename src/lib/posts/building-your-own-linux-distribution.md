@@ -1,7 +1,7 @@
 ---
 title: 'Building your own Linux Distribution'
 date: '2023-07-30'
-updated: '2023-07-30'
+updated: '2023-07-31'
 categories:
   - 'engineering'
   - 'linux'
