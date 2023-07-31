@@ -105,7 +105,7 @@ If you see anything missing, use aptitude to install a remaining missing package
 
 Create a 15GB root (/) linux file system partition and a 100MB EFI boot partition You can use any partitioning tool that you prefer, such as fdisk, cfdisk, or gparted. The size of the root partition depends on how much software you want to install on your LFS system, but it should be at least 10 GB. For simplicity, we will assume that the disk is an nvme drive and the partition is /dev/nvme0n1p1 for the efi boot partition and dev/nvme0n1p2 for the root (/) partition in this post. Some (old) UEFI implementations may require the ESP to be the first partition on the disk.
 
-Create a filesystems on the EFI and root partitions. You can use any filesystem type that you prefer, such as ext4, xfs, or btrfs for the root partition, but it should be vfat for the EFI partition. For simplicity, we will assume that the filesystem type is ext4 for the root partition in this post. You can use the following commands for the same:
+Create filesystems on the EFI and root partitions. You can use any filesystem type that you prefer, such as ext4, xfs, or btrfs for the root partition, but it should be vfat for the EFI partition. For simplicity, we will assume that the filesystem type is ext4 for the root partition in this post. You can use the following commands for the same:
 
 ```bash
 # Format the efi partition as vfat
@@ -178,7 +178,7 @@ EOF
 source ~/.bash_profile
 ```
 
-Creating a Limited Directory Layout in the LFS Filesystem
+Create a limited directory layout in the LFS filesystem: 
 
 ```bash
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
@@ -217,7 +217,23 @@ The target system is the custom Linux system that we will build from scratch. In
 
 I will not repeat the instructions in the LFS book here, as they are very detailed and clear. However, I will provide some tips and notes for building LFS on ARM64 architectures on a Mac using VMware outcomes.
 
-When compiling packages, you may encounter some errors or warnings related to ARM64-specific features or issues. You can usually fix them by applying patches or modifying configuration files. You can find some useful resources for building LFS on ARM64 here and here.
+When compiling packages, you may encounter some errors or warnings related to ARM64-specific features or issues. You can usually fix them by applying patches or modifying configuration files. You will likely encounter the following compilation issues:
+
+- gcc-libstdc++: move /usr/lib64 contents to /usr/lib and delete the /usr/lib64 directory
+- expect: modify the configure script as follows:
+
+./configure --prefix=/usr           \
+            --with-tcl=/usr/lib     \
+            --enable-shared         \
+            --mandir=/usr/share/man \
+            --with-tclinclude=/usr/include \
+            --build=aarch64-unknown-linux-gnu
+
+ - python-3.11.4: copy /usr/lib64/libffi.so.8 to /usr/lib/ so ctypes module can be compiled. Also copy /usr/lib64/libffi.so.8  to /usr/lib/    
+ - procps-ng: export PKG_CONFIG_PATH path  in 875-procps-ng file before configure.
+ 
+ export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
+
 When configuring the kernel, you may need to enable some options that are specific to ARM64 architectures or your target device. You can use the make menuconfig command to select the options you want, such as architecture, CPU type, drivers, filesystems, etc. You can find some useful resources for configuring the kernel on ARM64 [here](https://clfs.org/~kb0iic/lfs-systemd/index.html).
 
 ## Booting your custom linux distribution
@@ -302,9 +318,7 @@ Enable the block layer --->
   Partition Types --->
     [*/ ] Advanced partition selection                          [CONFIG_PARTITION_ADVANCED]
     [*]   EFI GUID Partition support                            [CONFIG_EFI_PARTITION]
-Kernel Configuration for UEFI support
 
-Enable the following options in the kernel configuration and recompile the kernel if necessary:
 ```
 
 Compile the kernel image and modules and install:
