@@ -178,7 +178,7 @@ EOF
 source ~/.bash_profile
 ```
 
-Create a limited directory layout in the LFS filesystem: 
+Create a limited directory layout in the LFS filesystem:
 
 ```bash
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
@@ -222,17 +222,17 @@ When compiling packages, you may encounter some errors or warnings related to AR
 - gcc-libstdc++: move /usr/lib64 contents to /usr/lib and delete the /usr/lib64 directory
 - expect: modify the configure script as follows:
 
-./configure --prefix=/usr           \
-            --with-tcl=/usr/lib     \
-            --enable-shared         \
-            --mandir=/usr/share/man \
-            --with-tclinclude=/usr/include \
-            --build=aarch64-unknown-linux-gnu
+  ./configure --prefix=/usr \
+   --with-tcl=/usr/lib \
+   --enable-shared \
+   --mandir=/usr/share/man \
+   --with-tclinclude=/usr/include \
+   --build=aarch64-unknown-linux-gnu
 
- - python-3.11.4: copy /usr/lib64/libffi.so.8 to /usr/lib/ so ctypes module can be compiled. Also copy /usr/lib64/libffi.so.8  to /usr/lib/    
- - procps-ng: export PKG_CONFIG_PATH path  in 875-procps-ng file before configure.
- 
- export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
+- python-3.11.4: copy /usr/lib64/libffi.so.8 to /usr/lib/ so ctypes module can be compiled. Also copy /usr/lib64/libffi.so.8 to /usr/lib/
+- procps-ng: export PKG_CONFIG_PATH path in 875-procps-ng file before configure.
+
+  export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
 
 When configuring the kernel, you may need to enable some options that are specific to ARM64 architectures or your target device. You can use the make menuconfig command to select the options you want, such as architecture, CPU type, drivers, filesystems, etc. You can find some useful resources for configuring the kernel on ARM64 [here](https://clfs.org/~kb0iic/lfs-systemd/index.html).
 
