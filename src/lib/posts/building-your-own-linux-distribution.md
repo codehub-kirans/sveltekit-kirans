@@ -21,8 +21,8 @@ This post is about my experience building linux from scratch on ARM64 architectu
 
 To build Linux from scratch in a VM on ARM64 architectures such as on a Mac, you will need the following:
 
-- A Mac with an ARM64 processor, such as the MacBook Air (M1/M2), MacBook Pro (M1/M2), Mac mini (M1,M2), or an iMac (M1, M2).
-- VMware Fusion, which is a desktop virtualization software that allows you to run multiple operating systems on your Mac at the same time. The free version is sufficient for our use case.
+- [A Mac with an ARM64 processor](https://www.apple.com/mac/), such as the MacBook Air (M1/M2), MacBook Pro (M1/M2), Mac mini (M1,M2), or an iMac (M1, M2).
+- [VMware Fusion](https://www.vmware.com/products/fusion.html), which is a desktop virtualization software that allows you to run multiple operating systems on your Mac at the same time. The free version is sufficient for our use case.
 - [Ubuntu 23.04 live server](https://ubuntu.com/download/server/arm), which is a popular and user-friendly Linux distribution that we will use as the host system for building our custom Linux system.
 - [The LFS book](https://www.linuxfromscratch.org/lfs/), which is the official guide for building Linux from scratch. We will use the latest stable version, which is 11.3 at the time of writing this post.
 
@@ -330,7 +330,7 @@ make
 make modules_install
 ```
 
-Copy the kernel image to the boot directory
+Copy the kernel image to the boot directory:
 
 ```bash
 cp -iv arch/arm64/boot/bzImage /boot/vmlinuz-6.4.3-lfs-r11.3-140-systemd
@@ -395,6 +395,25 @@ menuentry "Firmware Setup" {
 }
 ```
 
+Finally ensure your fstab entries are properly configured in /etc/fstab as per your disk layout. You may end up with something like this:
+
+```bash
+# Begin /etc/fstab
+
+# file system  mount-point  type     options             dump  fsck
+#                                                              order
+
+/dev/nvme0n1p2 /            ext4     defaults            1     1
+proc           /proc        proc     nosuid,noexec,nodev 0     0
+sysfs          /sys         sysfs    nosuid,noexec,nodev 0     0
+devpts         /dev/pts     devpts   gid=5,mode=620      0     0
+tmpfs          /run         tmpfs    defaults            0     0
+devtmpfs       /dev         devtmpfs mode=0755,nosuid    0     0
+/dev/nvme0n1p1 /boot/efi/ vfat defaults 0 1
+efivarfs       /sys/firmware/efi/efivars efivarfs defaults 0   0
+# End /etc/fstab
+```
+
 ## Making the distribution uniquely your own
 
 Congratulations! The new LFS system is now installed!
@@ -406,18 +425,18 @@ cat > /etc/lsb-release << "EOF"
 DISTRIB_ID="My Linux"
 DISTRIB_RELEASE="11.3-systemd"
 DISTRIB_CODENAME="<your name here>"
-DISTRIB_DESCRIPTION="Linux From Scratch"
+DISTRIB_DESCRIPTION="My Linux"
 EOF
 ```
 
-The second one contains roughly the same information, and is used by systemd
+The second one contains roughly the same information, and is used by systemd:
 
 ```bash
 cat > /etc/os-release << "EOF"
 NAME="My Linux"
 VERSION="11.3-systemd"
-ID=lfs
-PRETTY_NAME="Linux From Scratch 11.3-systemd"
+ID=mylinux
+PRETTY_NAME="My Linux 11.3-systemd"
 VERSION_CODENAME="<your name here>"
 EOF
 ```
