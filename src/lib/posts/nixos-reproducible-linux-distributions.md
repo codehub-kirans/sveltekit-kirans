@@ -1,5 +1,5 @@
 ---
-title: 'NixOS: Creating a Customized and Portable Linux Environment with the Power of Functional Package Management'
+title: 'NixOS: Reproducible Linux Distributions through Functional Package Management'
 date: '2023-09-10'
 updated: '2023-09-10'
 categories:
@@ -35,7 +35,7 @@ Nix then checks if the store path already exists in the local or remote cache. I
 
 Nix also allows users to create multiple profiles that point to different sets of packages in the store. A profile is simply a symlink to a store path that contains a manifest file that lists the packages in the profile. Users can switch between profiles atomically and roll back to previous versions if needed. Nix also supports garbage collection, which removes unused packages from the store to free up disk space.
 
-### How to install NixOS on your machine or in a virtual environment?
+## Installing NixOS on your machine or in a virtual environment
 
 - Download the NixOS ISO image from the official website. You can choose between GNOME and KDE desktop environments, or a minimal image if you prefer. For this post, I will use the minimal image and use the console installer.
 
@@ -55,7 +55,7 @@ sudo cfdisk /dev/nvme0n1
 6. Select Write and press Enter. Type yes and press Enter to confirm. This will write the changes to the disk.
 7. Select Quit and press Enter to exit cfdisk2.
 
-<ImageLoader src="/images/optimized/nixos-partitioning.webp" alt="Kiran S" caption="Kiran S" width="332" height="310" --scaling="75%">
+<ImageLoader src="/images/optimized/nixos-partitioning.webp" alt="Nixos Partitioning" caption="Nixos Partitioning" --scaling="100%">
 </ImageLoader>
 
 - Run sudo cryptsetup luksFormat /dev/nvme0n1p2 to encrypt the LVM partition with LUKS. Type YES in uppercase and press Enter to confirm. Enter a passphrase of your choice and press Enter. Repeat the passphrase and press Enter. Next run sudo cryptsetup luksOpen /dev/nvme0n1p2 enc-pv to unlock the encrypted partition. Enter the passphrase you set in the previous step and press Enter.
@@ -88,7 +88,7 @@ sudo swapon /dev/vg/swap
 
 - Run lsblk to verify you have something similar to below
 
-<ImageLoader src="/images/optimized/nixos-lsblk.webp" alt="Kiran S" caption="Kiran S" width="332" height="310" --scaling="75%">
+<ImageLoader src="/images/optimized/nixos-lsblk.webp" alt="Partition List" caption="Partition List" >
 </ImageLoader>
 
 - Generate the configuration.nix that specifies the intended configuration of the system. This is because NixOS has a declarative configuration model: you create or edit a description of the desired configuration of your system, and then NixOS takes care of making it happen.
@@ -256,12 +256,12 @@ sudo reboot now
 - Login as root and create a password for your user account which was kirans in my case.
 
 ```bash
-passwd eelco
+passwd kirans
 ```
 
 That's it! Enjoy your NixOS installation with encryption and LVM on an NVMe drive!
 
-# Using nix commands to manage your packages
+## Using nix commands to manage your packages
 
 Your configuration.nix file is the main file that defines your NixOS system configuration. It is a Nix expression that specifies various options for your system, such as the boot loader, the network settings, the user accounts, the services, and the packages. You can write and edit your configuration.nix file using any text editor of your choice, such as vim, nano, or VSCode.
 
