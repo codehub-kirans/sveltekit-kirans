@@ -279,7 +279,8 @@ To install and activate the new configuration:
 2. Do a garbage collection to remove old system generations with **sudo nix-collect-garbage -d**
 3. Manually make some space in boot. Find your kernels and rm them.
 4. Run **sudo nixos-rebuild switch** followed by **sudo nixos-rebuild boot**. This time your bootloader will be installed correctly along with the new kernel and initrd
-5. Make sure point 4 was executed correctly by looking at the output and reboot. Optionally remove the result directory created by point 1
+5. Make sure point 4 was executed correctly by looking at the output and reboot.
+6. If the reboot is successful and if you want to free up disk space, remove the result directory created by point 1 and run **sudo nix-collect-garbage -d** again. However, this will also make it impossible to rollback to the previous configuration that you built. So, you should use this option with care.
 
 ```bash
 sudo nixos-rebuild build
@@ -287,3 +288,7 @@ sudo nix-collect-garbage -d
 sudo nixos-rebuild switch
 sudo nixos-rebuild boot
 ```
+
+<Callout>
+The result directory is created by the command nix-build, which is used to build Nix expressions. It is a symlink to the output path of the last Nix expression that you built. It is created by default in the current directory where you ran the command. Since the result directory is also a GC root, it prevents the garbage collector from deleting the packages that it refers to. The result directory uses up disk space because it points to a store path that contains the files and dependencies of the package that you built. The store path itself may be large, depending on the package. For example, if you build a package that depends on gcc, then the store path will include gcc and all its dependencies. The result directory will use up as much disk space as the store path that it points to.  Alternatively, you can use nix-store --optimise to hard-link identical files in the store and reduce disk space usage. This can typically save 25-35% of disk space.
+</Callout>
